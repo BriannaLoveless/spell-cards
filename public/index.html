@@ -3,13 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Spell Cards</title>
   </head>
   <body>
-    <h1>Spell Cards</h1>
-    <div class="spell"></div>
+    <div class="card-container is-flex is-justify-content-center">
+      <div class="card" style="max-width: 500px">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img src="./images/evocation.jpg" alt="Placeholder image" />
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">Acid Arrow</p>
+              <p class="subtitle is-6">Evocation - 2nd Level</p>
+            </div>
+          </div>
 
+          <div class="numbers is-flex is-justify-content-space-around">
+            <div class="numbers-column is-flex-direction-column">
+              <div class="range">Range:</div>
+              <div>90ft</div>
+            </div>
+            <div class="numbers-column is-flex-direction-column">
+              <div class="cast-time">Cast Time:</div>
+              <div>1 action</div>
+            </div>
+            <div class="numbers-column is-flex-direction-column">
+              <div class="Duration">Duration:</div>
+              <div>Instantaneous</div>
+            </div>
+          </div>
+
+          <div class="content">
+            <p>
+              "A shimmering green arrow streaks toward a target within range and
+              bursts in a spray of acid. Make a ranged spell attack against the
+              target. On a hit, the target takes 4d4 acid damage immediately and
+              2d4 acid damage at the end of its next turn. On a miss, the arrow
+              splashes the target with acid for half as much of the initial
+              damage and no damage at the end of its next turn."
+            </p>
+            <p>
+              "When you cast this spell using a spell slot of 3rd level or
+              higher, the damage (both initial and later) increases by 1d4 for
+              each slot level above 2nd."
+            </p>
+            <p>Components: V, S, M</p>
+            <p>Material: "Powdered rhubarb leaf and an adder's stomach."</p>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="index.js"></script>
   </body>
 </html>
