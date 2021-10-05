@@ -6,12 +6,12 @@
     // separate page? just down at the bottom, smaller maybe?
     // maybe separate "tab" within the page that hides the search section and displays all saved spells in a list/grid, maybe by level
 
-1. Set up server
-2. Set up client-side
-3. Get API data
-4. Save data to a useful place
-5. Create static dummy html w/o any data
-6. Replace hard coded data w/ api data
+1. Set up server ✔
+2. Set up client-side ✔
+3. Get API data ✔
+4. Save data to a useful place ✔
+5. Create static dummy html w/o any data ✔
+6. Replace hard coded data w/ api data ✔
 7. Sort data into useful variables
 8. Decide how I want to display multiple cards
 9. Implement multiple cards
