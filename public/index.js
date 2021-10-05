@@ -6,28 +6,24 @@ const apiData = {
 const { url, subject, index } = apiData;
 const api_url = `${url}${subject}`;
 
-let spells = []
-let currentSpell = {}
-let currentSpellIndex = 2
+let spells = [];
+let currentSpell = {};
+let currentSpellIndex = 2;
 
 async function getSpells() {
   const response = await fetch(api_url);
   return await response.json();
-  
 }
 
 async function getSpellDetails(spellUrl) {
   const response = await fetch(`${url}${spellUrl}`);
   return await response.json();
-  
 }
-
-
 
 const generateHtml = (data) => {
   // define all query selectors
   let name = data.name;
-  let school = data.school.name
+  let school = data.school.name;
   let range = data.range;
   let castingTime = data.casting_time;
   let duration = data.duration;
@@ -35,7 +31,7 @@ const generateHtml = (data) => {
   let higherLevel = data.higher_level;
   let components = data.components;
   let material = data.material;
-  
+
   // assign all values to query selectors
   document.querySelector('.name').textContent = name;
   document.querySelector('.school').textContent = school;
@@ -47,44 +43,41 @@ const generateHtml = (data) => {
   document.querySelector('.components').textContent = components;
   document.querySelector('.material').textContent = material;
 
-  let img = document.querySelector('.img_school')
+  let img = document.querySelector('.img_school');
 
-  switch(school) {
+  switch (school) {
     case 'Enchantment':
-      img.setAttribute('src', './images/enchantment.jpg')
+      img.setAttribute('src', './images/enchantment.jpg');
       break;
     case 'Abjuration':
-      img.setAttribute('src', './images/abjuration.jpg')
+      img.setAttribute('src', './images/abjuration.jpg');
       break;
     case 'Conjuration':
-      img.setAttribute('src', './images/conjuration.jpg')
+      img.setAttribute('src', './images/conjuration.jpg');
       break;
     case 'Divination':
-      img.setAttribute('src', './images/divination.jpg')
+      img.setAttribute('src', './images/divination.jpg');
       break;
     case 'Evocation':
-      img.setAttribute('src', './images/evocation.jpg')
+      img.setAttribute('src', './images/evocation.jpg');
       break;
     case 'Illusion':
-      img.setAttribute('src', './images/illusion.jpg')
+      img.setAttribute('src', './images/illusion.jpg');
       break;
     case 'Necromancy':
-      img.setAttribute('src', './images/necromancy.jpg')
+      img.setAttribute('src', './images/necromancy.jpg');
       break;
     case 'Transmutation':
-      img.setAttribute('src', './images/transmutation.jpg')
+      img.setAttribute('src', './images/transmutation.jpg');
       break;
     default:
-      img.setAttribute('src', 'https://bulma.io/images/placeholders/96x96.png')
+      img.setAttribute('src', 'https://bulma.io/images/placeholders/96x96.png');
   }
 };
 
-
-
-getSpells().then( async (apiSpells) => {
+getSpells().then(async (apiSpells) => {
   spells = apiSpells;
-  currentSpell = await getSpellDetails(spells.results[currentSpellIndex].url)
+  currentSpell = await getSpellDetails(spells.results[currentSpellIndex].url);
   console.log(currentSpell);
   generateHtml(currentSpell);
-
 });
