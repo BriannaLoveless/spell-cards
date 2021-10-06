@@ -13,9 +13,9 @@
 5. Create static dummy html w/o any data ✔
 6. Replace hard coded data w/ api data ✔
 7. Sort data into useful variables ✔
-7a. Create sidebar w/ all spells linked
-8. Decide how I want to display multiple cards
-9. Implement multiple cards
-10. Add search filter
-11. Add favorite functionality(local storage)
-12. Add save to database
+8. Create sidebar w/ all spells linked ✔
+9. ~~Decide how I want to display multiple cards~~
+10. ~~Implement multiple cards~~
+11. Add search filter
+12. Add favorite functionality(local storage)
+13. Add save to database

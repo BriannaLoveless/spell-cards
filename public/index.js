@@ -8,7 +8,7 @@ const api_url = `${url}${subject}`;
 
 let spells = [];
 let currentSpell = {};
-let currentSpellIndex = 2;
+let currentSpellIndex = 0;
 
 async function getSpells() {
   const response = await fetch(api_url);
@@ -75,9 +75,40 @@ const generateHtml = (data) => {
   }
 };
 
+
+
 getSpells().then(async (apiSpells) => {
   spells = apiSpells;
   currentSpell = await getSpellDetails(spells.results[currentSpellIndex].url);
-  console.log(currentSpell);
   generateHtml(currentSpell);
+  
+  spells.results.forEach((element, index) => {
+    
+    let item = document.createElement('li');
+    let link = document.createElement('a');
+    link.text = element.name;
+    if(index == currentSpellIndex){
+      link.classList.add('active')
+    }
+    item.appendChild(link);
+
+    let sidebar = document.querySelector('.links');
+    sidebar.append(item)
+    
+    link.onclick = async function(){
+      currentSpellIndex = index;
+      currentSpell = await getSpellDetails(spells.results[currentSpellIndex].url);
+      generateHtml(currentSpell);
+
+      // loop through list elements and remove active class
+      // add active class to clicked element
+      sidebar.querySelectorAll('.active').forEach((item) =>{
+        item.classList.remove('active')
+      })
+      this.classList.add('active')
+      
+      
+    }
+  });
 });
+
