@@ -19,3 +19,4 @@
 11. Add search filter
 12. Add favorite functionality(local storage)
 13. Add save to database
+14. Rewrite in React
