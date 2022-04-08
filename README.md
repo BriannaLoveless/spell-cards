@@ -1,4 +1,10 @@
-# TODO (What I want this app to do)
+# Spell Cards
+A vanilla javascript app that uses the [D&D 5e API](https://www.dnd5eapi.co/) to display spells
+## Getting Started
+1. install dependencies `npm i`
+2. run server `npm start`
+3. go to app [http://localhost:3000/](http://localhost:3000/)
+## TODO (What I want this app to do)
 - Display all spells from D&D 5e in a "card"
     // Name, effect, range, conditions, maybe images? -- might require separate api or something?
 - Create search functionality for users
